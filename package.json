@@ -1,0 +1,14 @@
+{
+  "name": "vercel-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy:dev": "vercel",
+    "deploy:prod": "vercel --prod",
+    "test": "./post.sh && ./get.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
