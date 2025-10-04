@@ -1,14 +1,12 @@
 {
-  "name": "vercel-test",
+  "name": "kakashi",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "deploy:dev": "vercel",
-    "deploy:prod": "vercel --prod",
-    "test": "./post.sh && ./get.sh"
+    "deploy:prod": "vercel --prod"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rogov Kirill",
   "license": "ISC"
 }
