@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/zsh
 
-. ./.env
+. ./../.env
 
 curl -s -X POST "https://$VERCEL_URL/api/cache" \
   -H 'Content-Type: application/json' \

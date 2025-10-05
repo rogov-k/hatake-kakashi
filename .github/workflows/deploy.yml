@@ -22,11 +22,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build project
-        run: npm run build
-
-      - name: Copy static files
-        run: cp index.html dist
+      - name: Build
+        run: ./scripts/build.sh
 
       - name: Deploy to Vercel
         run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
