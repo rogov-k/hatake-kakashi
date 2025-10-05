@@ -1,11 +1,17 @@
 {
+  "buildCommand": "echo 'Prebuilt - no build needed'",
+  "outputDirectory": ".",
   "functions": {
     "dist/api/**/*.js": {
       "runtime": "nodejs20.x"
     }
   },
   "builds": [
-    { "src": "dist/api/**/*.js", "use": "@vercel/node" }
+    { "src": "dist/api/**/*.js", "use": "@vercel/node" },
+    { "src": "index.html", "use": "@vercel/static" }
   ],
-  "ignoreCommand": "echo 'Ignoring non-dist files'"
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/dist/api/$1.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
