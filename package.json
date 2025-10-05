@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "Rogov Kirill",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.18.8"
+  }
 }
