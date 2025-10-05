@@ -1,23 +1,37 @@
-name: Deploy to Vercel
+name: Build and Deploy to Vercel
 
 on:
   push:
     branches:
-      - master
+      - main   # or whatever branch you use for production
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      # 1. Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Install Vercel CLI
-        run: npm install -g vercel
+      # 2. Setup Node.js (adjust version if needed)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
 
-      - name: Deploy to Vercel (Production)
-        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Build TypeScript (compile src → dist)
+      - name: Build project
+        run: npm run build
+
+      # 5. Deploy to Vercel (Production)
+      - name: Deploy to Vercel
+        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
