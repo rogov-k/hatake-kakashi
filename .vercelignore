@@ -1,6 +1,4 @@
 node_modules
-dist
-.vercel
 .env
 post.sh
 get.sh
