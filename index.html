@@ -24,7 +24,8 @@
   <script>
     document.getElementById('btn-1').onclick = async () => {
       const key = document.getElementById('input-key').value.trim();
-      const value = document.getElementById('input-key').value.trim();
+      const value = document.getElementById('input-value').value.trim();
+
       const res = await fetch('/api/cache', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
