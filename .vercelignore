@@ -1,7 +1,6 @@
-*
-!dist/api/
-!index.html
-!package.json
-!tsconfig.json
-!vercel.json
-
+node_modules
+dist
+.vercel
+.env
+post.sh
+get.sh
