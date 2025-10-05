@@ -1,1 +1,24 @@
-<p>Hello world! Here</p>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Kakashi TS</title>
+</head>
+<body>
+  <h1>⚡ Kakashi TypeScript + Vercel Demo</h1>
+  <button id="btn">POST → /api/cache</button>
+  <pre id="out"></pre>
+
+  <script>
+    document.getElementById('btn').onclick = async () => {
+      const res = await fetch('/api/cache', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ key: 'demo', value: 'Hello from TypeScript!' })
+      });
+      const data = await res.json();
+      document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+    };
+  </script>
+</body>
+</html>

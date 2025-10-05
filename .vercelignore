@@ -1,6 +1,6 @@
 *
-
-!api/
+!dist/api/
 !index.html
 !package.json
 !vercel.json
+

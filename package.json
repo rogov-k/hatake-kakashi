@@ -1,15 +1,14 @@
 {
-  "name": "kakashi",
+  "name": "kakashi-ts",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "deploy:dev": "vercel",
-    "deploy:prod": "vercel --prod"
+    "build": "tsc",
+    "deploy:dev": "npm run build && vercel",
+    "deploy:prod": "npm run build && vercel --prod"
   },
-  "keywords": [],
-  "author": "Rogov Kirill",
-  "license": "ISC",
   "devDependencies": {
-    "@types/node": "^22.18.8"
+    "@types/node": "^22.8.8",
+    "@vercel/node": "^2.3.0",
+    "typescript": "^5.6.3"
   }
 }
