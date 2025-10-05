@@ -2,5 +2,6 @@
 !dist/api/
 !index.html
 !package.json
+!tsconfig.json
 !vercel.json
 
