@@ -2,5 +2,5 @@
 
 . ./.env
 
-curl -s "$API_URL/api/cache?key=user:$1" \
-| jq '.key + " " + .value'
+curl -s "https://$VERCEL_URL/api/cache?key=user:$1" \
+| jq -r '.key + " " + .value'
