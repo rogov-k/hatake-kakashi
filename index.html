@@ -5,14 +5,19 @@
   <title>Hatake Kakashi</title>
 </head>
 <body>
-  <label for="input-key">Key:</label>
-  <input id="input-key" type="text" autocomplete="off"/>
+    <div>
+        <label for="input-key">Key:</label>
+        <input id="input-key" type="text" autocomplete="off"/>
+    </div>
 
-  <label for="input-value">Key:</label>
-  <input id="input-value" type="text" autocomplete="off"/>
-
-  <button id="btn-1">POST → /api/cache</button>
-  <button id="btn-2">GET → /api/cache</button>
+    <div>
+        <label for="input-value">Value:</label>
+        <input id="input-value" type="text" autocomplete="off"/>
+    </div>
+    <div>
+        <button id="btn-1">POST → /api/cache</button>
+        <button id="btn-2">GET → /api/cache</button>
+    </div>
 
   <pre id="out"></pre>
 

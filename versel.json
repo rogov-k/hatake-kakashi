@@ -1,4 +1,5 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "echo 'Prebuilt - no build needed'",
   "outputDirectory": ".",
   "functions": {
