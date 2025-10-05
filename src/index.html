@@ -23,8 +23,8 @@
 
   <script>
     document.getElementById('btn-1').onclick = async () => {
-      const key = document.getElementById<HTMLInputElement>('input-key').value.trim();
-      const value = document.getElementById<HTMLInputElement>('input-value').value.trim();
+      const key = document.getElementById('input-key').value.trim();
+      const value = document.getElementById('input-value').value.trim();
 
       const res = await fetch('/api/cache', {
         method: 'POST',
@@ -37,7 +37,7 @@
     };
 
     document.getElementById('btn-2').onclick = async () => {
-      const key = document.getElementById<HTMLInputElement>('input-key').value.trim();
+      const key = document.getElementById('input-key').value.trim();
       const res = await fetch(`/api/cache?key=${key}`, { method: 'GET' });
       const data = await res.json();
 
