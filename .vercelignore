@@ -4,9 +4,9 @@ node_modules
 src
 .env
 .gitignore
-scripts/get
+scripts/get.sh
 package.json
 package-lock.json
-scripts/post
+scripts/post.sh
 README.md
 tsconfig.json
