@@ -1,6 +1,6 @@
-# Ignore everything
-*
-
-# Allow these folders/files
-!api/
-!index.html
+## Ignore everything
+#*
+#
+## Allow these folders/files
+#!api/
+#!index.html
