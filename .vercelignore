@@ -1,11 +1,6 @@
-package.json
-package-lock.json
-post.sh
-README.md
-.vercelignore
-get.sh
-.gitignore
-node_modules
-.vercel
-.idea
-.github
+*
+
+!api/
+!index.html
+!package.json
+!vercel.json
