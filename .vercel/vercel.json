@@ -4,9 +4,5 @@
   "builds": [
     { "src": "/dist/api/**/*.js", "use": "@vercel/node" },
     { "src": "/dist/index.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/dist/(.*)", "dest": "/$1" },
-    { "src": "/dist/api/(.*)", "dest": "/api/$1.js" }
   ]
 }
