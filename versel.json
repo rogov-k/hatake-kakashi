@@ -6,6 +6,6 @@
   },
   "builds": [
     { "src": "dist/api/**/*.js", "use": "@vercel/node" }
-  ]
+  ],
+  "ignoreCommand": "echo 'Ignoring non-dist files'"
 }
-
