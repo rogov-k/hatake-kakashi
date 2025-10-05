@@ -1,6 +1,7 @@
-## Ignore everything
-#*
-#
-## Allow these folders/files
-#!api/
-#!index.html
+# Ignore everything
+*
+
+# Allow these folders/files
+!api/cache.js
+!api/echo.js
+!index.html
