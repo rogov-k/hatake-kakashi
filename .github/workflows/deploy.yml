@@ -22,8 +22,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - run: tree -a
       - name: Build
         run: ./scripts/build
+      - run: tree -a
 
       - name: Deploy to Vercel
         run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
