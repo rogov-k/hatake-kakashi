@@ -1,6 +1,7 @@
 .github
 .idea
-.vercel
+.vercel/project.json
+.vercel/README.txt
 dist
 node_modules
 .env
