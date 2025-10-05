@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "tsc",
-    "start": "vercel dev",
-    "deploy:prod": "vercel --prod"
+    "start": "vercel --local-config .vercel/vercel.json dev",
+    "deploy:prod": "vercel--local-config .vercel/vercel.json --prod"
   },
   "devDependencies": {
     "@types/node": "^22.8.8",

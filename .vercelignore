@@ -1,12 +1,11 @@
 .github
 .idea
 node_modules
+scripts
 src
 .env
 .gitignore
-scripts/get.sh
 package.json
 package-lock.json
-scripts/post.sh
 README.md
 tsconfig.json
