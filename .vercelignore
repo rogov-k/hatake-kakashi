@@ -1,5 +1,6 @@
+# Ignore everything
 *
-!.vercel/*
-!api/*
-!.vercelignore
+
+# Allow these folders/files
+!api/
 !index.html
