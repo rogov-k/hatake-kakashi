@@ -23,6 +23,7 @@ jobs:
         run: npm ci
 
       - run: tree -a -I 'node_modules|.git'
+      - run: chmod 755 ./scripts/build
 
       - name: Build
         run: ./scripts/build
