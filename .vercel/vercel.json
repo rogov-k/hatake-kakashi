@@ -10,6 +10,10 @@
     { "src": "/dist/index.html", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/dist/api(.*).js", "dest": "/api/$1" }
+    { "src": "/dist/api(.*).js", "dest": "/api/$1" },
+
+    { "src": "/dist/api/echo.js", "dest": "/api/echo" },
+
+    { "src": "/dist/index.html", "dest": "$1" }
   ]
 }
