@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "tsc",
-    "deploy:dev": "npm run build && vercel",
-    "deploy:prod": "npm run build && vercel --prod"
+    "deploy:dev": "vercel",
+    "deploy:prod": "vercel --prod"
   },
   "devDependencies": {
     "@types/node": "^22.8.8",
