@@ -1,19 +1,13 @@
 {
-  "buildCommand": "echo 'Skipping TypeScript build — already built'",
+  "buildCommand": "echo 'Prebuilt - skipping TypeScript build'",
   "outputDirectory": ".",
   "functions": {
     "dist/api/**/*.js": {
       "runtime": "vercel-node@3.0.0"
     }
   },
-  "builds": [
-    { "src": "/dist/index.html", "use": "@vercel/static" }
-  ],
   "routes": [
-    { "src": "/dist/api(.*).js", "dest": "/api/$1" },
-
-    { "src": "/dist/api/echo.js", "dest": "/api/echo" },
-
-    { "src": "/dist/index.html", "dest": "$1" }
+    { "src": "/api/(.*)", "dest": "/dist/api/$1.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
