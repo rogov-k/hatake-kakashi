@@ -1,5 +1,5 @@
 *
-!.vercel
-!api
+!.vercel/*
+!api/*
 !.vercelignore
 !index.html
