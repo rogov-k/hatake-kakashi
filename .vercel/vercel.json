@@ -7,8 +7,8 @@
     { "src": "dist/api/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/(?<path>", "dest": "/dist/$path" },
+    { "src": "/<path>", "dest": "/dist/$path" },
     { "src": "/", "dest": "/dist/index.html" },
-    { "src": "/api/(?<path>)", "dest": "/dist/api/$path.js" }
+    { "src": "/api/<path>", "dest": "/dist/api/$path.js" }
   ]
 }
