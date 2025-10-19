@@ -3,10 +3,6 @@
 rm -rf dist
 
 npm run build
-cp src/index.html dist/index.html
-cp src/favicon.ico dist/favicon.ico
-cp src/favicon.svg dist/favicon.svg
+cp -R src/static /dist
 
-cd dist
-tree -a
-cd ../
+tree -a dist
