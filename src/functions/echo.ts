@@ -4,7 +4,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === 'GET') {
     res.status(200).json({
       ok: true,
-      hash: process.env.VERCEL_DEPLOYMENT_ID ?? 'local'
+      hash: process.env.VERCEL_DEPLOYMENT_ID
     });
   } else {
     res.status(405).end();

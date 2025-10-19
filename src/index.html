@@ -1,37 +1,48 @@
-PROMPT='%F{green}%#%f %d '
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hatake Kakashi</title>
+</head>
+<body>
+<div>
+    <label for="input-key">Key:</label>
+    <input id="input-key" type="text" autocomplete="off"/>
+</div>
 
-function rc() {
-  webstorm ~/.zshrc
-}
+<div>
+    <label for="input-value">Value:</label>
+    <input id="input-value" type="text" autocomplete="off"/>
+</div>
+<div>
+    <button id="btn-1">POST → /api/cache</button>
+    <button id="btn-2">GET → /api/cache</button>
+</div>
 
-function rc++() {
-  source ~/.zshrc
-}
+<pre id="out"></pre>
 
-function edit() {
-  webstorm "$1" --temp-project > /dev/null 2>&1 &
-}
+<script>
+    document.getElementById('btn-1').onclick = async () => {
+        const key = document.getElementById('input-key').value.trim();
+        const value = document.getElementById('input-value').value.trim();
 
-function past() {
-  local text="$1"
-  local file="$2"
-  local dir=$(dirname "$file")
+        const res = await fetch('/api/cache', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({key, value}),
+        });
+        const data = await res.json();
 
-  if [[ -z "$file" ]]; then
-    echo "❌ There is no file path (2nd argument)"
-    return 1
-  fi
+        document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+    };
 
-  if [[ ! -d "$dir" && "$dir" != "." ]]; then
-    echo "📂 The '$dir' directory has not been found"
-    read -r "?Would you like to create the directory? (y/n): " answer
-    if [[ "$answer" == [Yy] ]]; then
-      mkdir -p "$dir" && echo "Directory has been created"
-    else
-      echo "Canceled"
-      return 0
-    fi
-  fi
+    document.getElementById('btn-2').onclick = async () => {
+        const key = document.getElementById('input-key').value.trim();
+        const res = await fetch(`/api/cache?key=${key}`, {method: 'GET'});
+        const data = await res.json();
 
-  echo "$text" > "$file" && echo && cat "$file"
-}
+        document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+    };
+</script>
+</body>
+</html>

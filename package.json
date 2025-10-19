@@ -7,6 +7,9 @@
     "start": "vercel --local-config .vercel/vercel.json dev",
     "deploy:prod": "vercel --local-config .vercel/vercel.json --prod"
   },
+  "dependencies": {
+    "pastedeno": "^0.6.2"
+  },
   "devDependencies": {
     "@types/node": "^22.8.8",
     "@vercel/node": "^2.3.0",
