@@ -8,6 +8,7 @@
     "deploy:prod": "vercel --local-config .vercel/vercel.json --prod"
   },
   "dependencies": {
+    "@randomorg/core": "^1.1.1",
     "pastedeno": "^0.6.2"
   },
   "devDependencies": {

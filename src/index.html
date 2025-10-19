@@ -1,48 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Hatake Kakashi</title>
+  <meta charset="UTF-8">
+  <title>Hatake Kakashi</title>
 </head>
 <body>
-<div>
-    <label for="input-key">Key:</label>
-    <input id="input-key" type="text" autocomplete="off"/>
-</div>
 
 <div>
-    <label for="input-value">Value:</label>
-    <input id="input-value" type="text" autocomplete="off"/>
-</div>
-<div>
-    <button id="btn-1">POST → /api/cache</button>
-    <button id="btn-2">GET → /api/cache</button>
+  <label for="input-value">Value:</label>
+  <textarea id="input-value"></textarea>
 </div>
 
 <pre id="out"></pre>
 
 <script>
-    document.getElementById('btn-1').onclick = async () => {
-        const key = document.getElementById('input-key').value.trim();
-        const value = document.getElementById('input-value').value.trim();
+  document.getElementById('btn-1').onclick = async () => {
+    const value = document.getElementById('input-value').value.trim();
 
-        const res = await fetch('/api/cache', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({key, value}),
-        });
-        const data = await res.json();
+    const res = await fetch('/api/paste', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({key, value}),
+    });
+    const data = await res.json();
 
-        document.getElementById('out').textContent = JSON.stringify(data, null, 2);
-    };
-
-    document.getElementById('btn-2').onclick = async () => {
-        const key = document.getElementById('input-key').value.trim();
-        const res = await fetch(`/api/cache?key=${key}`, {method: 'GET'});
-        const data = await res.json();
-
-        document.getElementById('out').textContent = JSON.stringify(data, null, 2);
-    };
+    document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+  };
 </script>
 </body>
 </html>

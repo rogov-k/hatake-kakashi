@@ -1,4 +1,5 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "echo 'Skipping TypeScript build (already compiled)'",
   "outputDirectory": ".",
   "builds": [
@@ -8,7 +9,7 @@
   "routes": [
     { "src": "/", "dest": "/dist/index.html" },
     { "src": "/favicon.ico", "dest": "/dist/favicon.ico" },
-    { "src": "/api/cache", "dest": "/dist/functions/cache.js" },
-    { "src": "/api/echo", "dest": "/dist/functions/echo.js" }
+
+    { "src": "/api/(?<path>[^/]*)", "dest": "/dist/functions/$path.js" }
   ]
 }
