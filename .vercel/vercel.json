@@ -2,8 +2,8 @@
   "buildCommand": "echo 'Skipping TypeScript build (already compiled)'",
   "outputDirectory": ".",
   "builds": [
-    { "src": "dist/functions/**/*.js", "use": "@vercel/node" },
-    { "src": "/dist/index.html", "use": "@vercel/static" }
+    { "src": "/dist/*", "use": "@vercel/static" },
+    { "src": "dist/functions/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/", "dest": "/dist/index.html" },
