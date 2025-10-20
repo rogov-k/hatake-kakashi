@@ -3,10 +3,15 @@
   "buildCommand": "echo 'Skipping TypeScript build (already compiled)'",
   "outputDirectory": ".",
   "builds": [
-    { "src": "/dist/*", "use": "@vercel/static" },
+    { "src": "dist/static/*", "use": "@vercel/static" },
     { "src": "dist/api/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/api/:path", "dest": "/dist/api/$path.js" }
+    { "src": "/", "dest": "/dist/static/index.html" },
+    { "src": "/favicon.ico", "dest": "/dist/static/favicon.ico" },
+
+    { "src": "/api/cache", "dest": "/dist/api/cache.js" },
+    { "src": "/api/echo", "dest": "/dist/api/echo.js" },
+    { "src": "/api/paste", "dest": "/dist/api/paste.js" }
   ]
 }
