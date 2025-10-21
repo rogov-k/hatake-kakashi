@@ -4,7 +4,8 @@ rm -rf dist
 
 npm run build
 
-mv  src/static/favicon.ico /dist/favicon.ico
-mv  src/static/index.html /dist/index.html
+mkdir ./dist/static
+cp  ./src/static/favicon.ico ./dist/static/favicon.ico
+cp  ./src/static/index.html ./dist/static/index.html
 
 tree -a dist
