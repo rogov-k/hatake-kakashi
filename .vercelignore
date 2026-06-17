@@ -1,9 +1,11 @@
-.github
+.github/
+.git/
 .idea
+.DS_Store
 node_modules
-scripts
 src
 .env
 .gitignore
 package-lock.json
 README.md
+/.run
