@@ -1,10 +1,10 @@
-.github/
-.git/
-.run/
+.github
+.git
+.run
 .idea
-.DS_Store
 node_modules
 src
+.DS_Store
 .env
 .gitignore
 package-lock.json

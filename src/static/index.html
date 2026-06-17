@@ -7,25 +7,20 @@
 <body>
 
 <div>
-  <label for="input-value">Value:</label>
-  <hr>
-  <textarea id="input-value"></textarea>
+  <label>
+    <input id="notation-input" type="text"/>
+  </label>
+  <button type="submit" onclick="onClickButton()">check</button>
+  <pre id="out"></pre>
 </div>
 
-<pre id="out"></pre>
-
 <script>
-  document.getElementById('btn-1').onclick = async () => {
-    const value = document.getElementById('input-value').value.trim();
+  const onClickButton = async () => {
+    const notation = document.getElementById('notation-input');
+    const value = notation.value.trim();
+    const res = await fetch('/chess', {method: 'POST', body: value});
 
-    const res = await fetch('/api/paste', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({key, value}),
-    });
-    const data = await res.json();
-
-    document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+    document.getElementById('out').textContent = await res.json();
   };
 </script>
 </body>
