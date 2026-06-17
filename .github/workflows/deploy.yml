@@ -24,10 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - run: chmod 755 ./scripts/build.sh
+      - run: chmod 755 ./scripts/build
 
       - name: Build
-        run: bash ./scripts/build.sh
+        run: bash ./scripts/build
 
       - name: Deploy to Vercel
         run: npx vercel --local-config .vercel/vercel.json --prod --token ${{ secrets.VERCEL_TOKEN }}
