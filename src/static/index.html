@@ -2,26 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hatake Kakashi</title>
+  <link rel="stylesheet" href="dist/static/styles.css">
+  <script src="dist/static/scripts.js"></script>
 </head>
-<body>
-
-<div>
-  <label>
-    <input id="notation-input" type="text"/>
-  </label>
-  <button type="submit" onclick="onClickButton()">check</button>
-  <pre id="out"></pre>
+<body onload="onLoad()">
+<div class="form">
+  <input
+    aria-label="Notation input"
+    type="text"    autocomplete="off"
+    id="notation-input"
+    value="rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR"
+  />
 </div>
 
-<script>
-  const onClickButton = async () => {
-    const notation = document.getElementById('notation-input');
-    const value = notation.value.trim();
-    const res = await fetch('/chess', {method: 'POST', body: value});
+<div id="notation"></div>
 
-    document.getElementById('out').textContent = await res.json();
-  };
-</script>
 </body>
 </html>

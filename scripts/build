@@ -10,7 +10,7 @@ tsc
 
 # Copy static files
 mkdir -p dist/static
-cp src/static/{favicon.ico,index.html} dist/static/
+cp src/static/* dist/static/
 
 # Copy chess engine
 mkdir -p dist/scripts/chess/bin
