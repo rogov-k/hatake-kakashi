@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": ".",
+  "builds": [
+    { "src": "dist/**/*", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/dist/chess/index.js" },
+    { "src": "/echo", "dest": "/dist/echo/index.js" }
+  ]
+}
