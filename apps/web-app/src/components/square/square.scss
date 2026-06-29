@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  user-select: none;
+  cursor: pointer;
+
+  &:hover {
+    outline: 2px solid rgb(255 99 71 / 0.4);
+  }
+}
+
+:host(.black) {
+  background-image: url('/black-cell-pattern.svg');
+  background-size: cover;
+}

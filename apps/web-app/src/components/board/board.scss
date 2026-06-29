@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  width: fit-content;
+  outline: rgba(0,0,0,.6) double;
+  padding: 3px;
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(calc(var(--cell-size) * 8) + (7 * var(--cell-gap)));
+    gap: var(--cell-gap);
+    padding: calc(var(--cell-gap) * 2);
+    border: 1px solid rgba(0,0,0,.6);
+  }
+}

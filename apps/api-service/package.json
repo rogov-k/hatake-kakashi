@@ -1,8 +1,7 @@
 {
-  "name": "chess-api",
+  "name": "@chess/api",
   "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@9.0.0",
   "scripts": {
     "build": "tsc",
     "start": "vercel -d dev",
@@ -10,7 +9,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.9.0",
-    "@vercel/node": "^5.8.0",
+    "@vercel/node": "^5.8.19",
     "typescript": "^5.9.0"
   }
 }

@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+:host(.white) {
+  color: rgb(131 44 44);
+}
+
+:host(.black) {
+  color: rgb(0 0 0 / 0.9);
+}
+
+.material-symbols-sharp {
+  font-size: 36px;
+}
